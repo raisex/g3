@@ -18,7 +18,7 @@ inTask(docker)(
   Seq(
     dockerfile := {
       val configTemplate = (Compile / resourceDirectory).value / "template.conf"
-      val startWaves     = sourceDirectory.value / "container" / "start-GXB.sh"
+      val startWaves     = sourceDirectory.value / "container" / "start-FLG.sh"
 
       val withAspectJ     = Option(System.getenv("WITH_ASPECTJ")).fold(false)(_.toBoolean)
       val aspectjAgentUrl = "http://search.maven.org/remotecontent?filepath=org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar"
@@ -27,7 +27,7 @@ inTask(docker)(
 
       new Dockerfile {
         from("anapsix/alpine-java:8_server-jre")
-        runRaw("mkdir -p /opt/GXB")
+        runRaw("mkdir -p /opt/FLG")
 
         // Install YourKit
         runRaw(s"""apk update && \\
@@ -36,12 +36,12 @@ inTask(docker)(
                   |unzip /tmp/$yourKitArchive -d /usr/local && \\
                   |rm /tmp/$yourKitArchive""".stripMargin)
 
-        if (withAspectJ) run("wget", "--quiet", aspectjAgentUrl, "-O", "/opt/GXB/aspectjweaver.jar")
+        if (withAspectJ) run("wget", "--quiet", aspectjAgentUrl, "-O", "/opt/FLG/aspectjweaver.jar")
 
-        add((assembly in LocalProject("node")).value, "/opt/GXB/GXB.jar")
-        add(Seq(configTemplate, startWaves), "/opt/GXB/")
-        run("chmod", "+x", "/opt/GXB/start-GXB.sh")
-        entryPoint("/opt/GXB/start-GXB.sh")
+        add((assembly in LocalProject("node")).value, "/opt/FLG/FLG.jar")
+        add(Seq(configTemplate, startWaves), "/opt/FLG/")
+        run("chmod", "+x", "/opt/FLG/start-FLG.sh")
+        entryPoint("/opt/FLG/start-FLG.sh")
         expose(10001)
       }
     },
@@ -86,8 +86,8 @@ lazy val itTestsCommonSettings: Seq[Def.Setting[_]] = Seq(
             runJVMOptions = Vector(
               "-XX:+IgnoreUnrecognizedVMOptions",
               "--add-modules=java.xml.bind",
-              "-DGXB.it.logging.appender=FILE",
-              s"-DGXB.it.logging.dir=${logDirectoryValue / suite.name.replaceAll("""(\w)\w*\.""", "$1.")}"
+              "-DFLG.it.logging.appender=FILE",
+              s"-DFLG.it.logging.dir=${logDirectoryValue / suite.name.replaceAll("""(\w)\w*\.""", "$1.")}"
             ) ++ javaOptionsValue,
             connectInput = false,
             envVars = envVarsValue

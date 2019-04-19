@@ -34,7 +34,7 @@ val versionSource = Def.task {
 }
 val network = SettingKey[Network]("network")
 network := { Network(sys.props.get("network")) }
-name := "GXB"
+name := "FLG"
 normalizedName := s"${name.value}${network.value.packageSuffix}"
 
 git.useGitDescribe := true
@@ -82,7 +82,7 @@ val aopMerge: MergeStrategy = new MergeStrategy {
 inTask(assembly)(
   Seq(
     test := {},
-    assemblyJarName := s"GXB-all-${version.value}.jar",
+    assemblyJarName := s"FLG-all-${version.value}.jar",
     assemblyMergeStrategy := {
       case PathList("META-INF", "io.netty.versions.properties") => MergeStrategy.concat
       case PathList("META-INF", "aop.xml")                      => aopMerge
@@ -109,18 +109,18 @@ inConfig(Test)(
 inConfig(Linux)(
   Seq(
     maintainer := "wavesplatform.com",
-    packageSummary := "GXB node",
-    packageDescription := "GXB node"
+    packageSummary := "FLG node",
+    packageDescription := "FLG node"
   ))
 
-bashScriptExtraDefines += s"""addJava "-DGXB.directory=/var/lib/${normalizedName.value}""""
+bashScriptExtraDefines += s"""addJava "-DFLG.directory=/var/lib/${normalizedName.value}""""
 
 val linuxScriptPattern = "bin/(.+)".r
 val batScriptPattern   = "bin/([^.]+)\\.bat".r
 
 inConfig(Universal)(
   Seq(
-    mappings += (baseDirectory.value / s"GXB-${network.value}.conf" -> "doc/GXB.conf.sample"),
+    mappings += (baseDirectory.value / s"FLG-${network.value}.conf" -> "doc/FLG.conf.sample"),
     mappings := {
       val scriptSuffix = network.value.packageSuffix
       mappings.value.map {

@@ -6,7 +6,7 @@
 
 **0.3.2**
 
-* By default walletDir and dataDir located in $HOME/GXB
+* By default walletDir and dataDir located in $HOME/FLG
 
 **0.3.1**
 
@@ -22,31 +22,31 @@
 
 * peers.dat format changed. Delete old version.
 * Different HTTP status codes in replies in HTTP API were implemented
-* GXB' Scorex v1.3.2
+* FLG' Scorex v1.3.2
 
 **0.2.0**
 
 * Peers blacklist ttl configuration via "p2p"/"blacklistResidenceTimeMilliseconds"
-* Upgrade to GXB' Scorex v1.3.1
+* Upgrade to FLG' Scorex v1.3.1
 
 **0.2.0-RC7**
 
-* New API /GXB/payment returns senderPublicKey
-* New API /GXB/create-signed-payment
-* /GXB/external-payment deprecated. 
-  Use new /GXB/broadcast-signed-payment.
-* New API /GXB/payment/signature
+* New API /FLG/payment returns senderPublicKey
+* New API /FLG/create-signed-payment
+* /FLG/external-payment deprecated. 
+  Use new /FLG/broadcast-signed-payment.
+* New API /FLG/payment/signature
 * minimumTxFee verification for API
 
 **0.2.0-RC5**
 
-* /GXB/external-payment returns error for incorrect recipient
+* /FLG/external-payment returns error for incorrect recipient
 
 **0.2.0-RC4**
 
 * Fixed issue with incorrect Handshake
 * Balance with confirmations is the minimum balance
-* /GXB/external-payment returns error if account balance invalid
+* /FLG/external-payment returns error if account balance invalid
 * New API method /consensus/generatingbalance/{address}
 
 **0.2.0-RC3**
@@ -64,4 +64,4 @@
 
 **0.1.2**
 
-* Upgrade to Scorex 1.2.4. Clean /scorex/GXB/data/ before run.
+* Upgrade to Scorex 1.2.4. Clean /scorex/FLG/data/ before run.

@@ -8,8 +8,8 @@ if [ "$1" = purge ]; then
     rm -rf /var/lib/${{app_name}}/data
     rm -rf /var/log/${{app_name}}
 
-    userdel GXB >/dev/null 2>&1 || true
-    groupdel GXB >/dev/null 2>&1 || true
+    userdel FLG >/dev/null 2>&1 || true
+    groupdel FLG >/dev/null 2>&1 || true
 fi
 
 exit 0

@@ -1,12 +1,12 @@
-# GXB 
-For information about swapping your TurtleNode to TurtleNetwork, please read [How to swap $GXB](https://github.com/BlackTurtle123/TurtleNetwork/wiki/TurtleNode-Gateway:-How-to-swap-$GXB-from-Waves-Platform-to-Turtle-Network).
+# FLG 
+For information about swapping your TurtleNode to TurtleNetwork, please read [How to swap $FLG](https://github.com/BlackTurtle123/TurtleNetwork/wiki/TurtleNode-Gateway:-How-to-swap-$FLG-from-Waves-Platform-to-Turtle-Network).
 In the master branch there is a code with functions that is under development. The latest release for each network can be found in the [Releases section](https://github.com/BlackTurtle123/TurtleNetwork/releases), you can switch to the corresponding tag and build the application.
 
-[How to configure GXB node](https://github.com/BlackTurtle123/TurtleNetwork/wiki/Setting-up-a-$GXB-node)
+[How to configure FLG node](https://github.com/BlackTurtle123/TurtleNetwork/wiki/Setting-up-a-$FLG-node)
 
 # Installation
 
-Please read [repo wiki article](https://github.com/BlackTurtle123/TurtleNetwork/wiki/Setting-up-a-$GXB-node).
+Please read [repo wiki article](https://github.com/BlackTurtle123/TurtleNetwork/wiki/Setting-up-a-$FLG-node).
 
 ## Compiling Packages from source
 
@@ -101,7 +101,7 @@ have `docker.imageId` system property defined for the run configuration. The eas
 
 ```
 ...
-[info] Step 5/5 : ENTRYPOINT /opt/GXB/start-GXB.sh
+[info] Step 5/5 : ENTRYPOINT /opt/FLG/start-FLG.sh
 [info]  ---> Using cache
 [info]  ---> e243fa08d496
 [info] Successfully built e243fa08d496
@@ -127,7 +127,7 @@ this automatically.
     -Dkamon.modules.kamon-statsd.auto-start=yes \
     -Dkamon.modules.kamon-system-metrics.auto-start=yes \
     -Dkamon.statsd.hostname=localhost \
-    -Dkamon.statsd.port=9999" sbt GXB-testnet.conf
+    -Dkamon.statsd.port=9999" sbt FLG-testnet.conf
     ``` 
 
     Here:
@@ -140,7 +140,7 @@ this automatically.
 # Acknowledgement
 
 [<img src="https://www.yourkit.com/images/yklogo.png">](http://www.yourkit.com/java/profiler/index.jsp)  
-We use YourKit full-featured Java Profiler to make GXB node faster. YourKit, LLC is the creator of innovative and intelligent tools for profiling Java and .NET applications.    
+We use YourKit full-featured Java Profiler to make FLG node faster. YourKit, LLC is the creator of innovative and intelligent tools for profiling Java and .NET applications.    
 Take a look at YourKit's leading software products: 
 <a href="http://www.yourkit.com/java/profiler/index.jsp">YourKit Java Profiler</a> and
 <a href="http://www.yourkit.com/.net/profiler/index.jsp">YourKit .NET Profiler</a>.
